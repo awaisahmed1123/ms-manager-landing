@@ -1,0 +1,132 @@
+.footer {
+  background: var(--color-secondary); /* Dark Navy Blue background */
+  color: #fff;
+  padding: 80px 0 30px;
+  position: relative;
+}
+
+.topSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr; /* Logo column bara, baqi barabar */
+  gap: 60px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 60px;
+}
+
+/* Brand Column */
+.brandColumn {
+  max-width: 350px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.logo span {
+  color: var(--color-primary); /* Blue accent matches even on dark bg */
+}
+
+.brandDesc {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 16px;
+}
+
+.socialLinks a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.socialLinks a:hover {
+  background: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+/* Link Columns */
+.columnTitle {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.linkColumn ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkColumn ul li {
+  margin-bottom: 14px;
+}
+
+.linkColumn ul li a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.linkColumn ul li a:hover {
+  color: var(--color-primary);
+  padding-left: 5px; /* Hover par thoda shift */
+}
+
+/* Bottom Section */
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .topSection {
+    grid-template-columns: 1fr 1fr; /* Tablet par 2 columns */
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .topSection {
+    grid-template-columns: 1fr; /* Mobile par 1 column */
+    text-align: center;
+    gap: 40px;
+  }
+
+  .brandColumn {
+    margin: 0 auto;
+  }
+
+  .logo, .socialLinks {
+    justify-content: center;
+  }
+
+  .bottomSection {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}

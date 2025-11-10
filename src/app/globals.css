@@ -1,27 +1,16 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* VVIP Color Palette */
+  --color-primary: #0052CC;    /* Deep Professional Blue */
+  --color-secondary: #0A192F;  /* Dark Navy (Luxury feel) */
+  --color-accent: #00E0FF;     /* Bright Cyan for highlights */
+  --color-bg: #FFFFFF;         /* Clean White */
+  --color-bg-alt: #F8FAFC;     /* Light Gray for sections */
+  --color-text: #1E293B;       /* Dark Gray for readability */
+  --color-text-light: #64748B; /* Lighter Gray for subtitles */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Font Variables mapped from layout.js */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
 * {
@@ -30,13 +19,50 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700; /* Bold headings for impact */
+  letter-spacing: -0.02em; /* Tighter spacing for modern look */
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Utility Classes for VVIP feel */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 50px; /* Pill shape is modern */
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px 0 rgba(0, 82, 204, 0.39);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 82, 204, 0.5);
 }

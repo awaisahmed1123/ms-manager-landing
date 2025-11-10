@@ -1,0 +1,250 @@
+/* Hero.module.css - Final Sleek Version */
+
+/* Full Screen Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+  background: linear-gradient(135deg, var(--color-bg-alt) 0%, #ECEFFF 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+/* VVIP Floating Circle Effect */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  background: var(--color-primary);
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+}
+.hero::before {
+  top: -150px;
+  right: -150px;
+  width: 600px;
+  height: 600px;
+  opacity: 0.04;
+}
+.hero::after {
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  opacity: 0.02;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Left Side Content --- */
+.content {
+  flex: 1;
+  max-width: 580px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(0, 82, 204, 0.08);
+  color: var(--color-primary);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  border: 1px solid rgba(0, 82, 204, 0.15);
+}
+
+.title {
+  font-size: 4rem;
+  line-height: 1.1;
+  color: var(--color-secondary);
+  margin-bottom: 24px;
+  letter-spacing: -1.5px;
+}
+
+.titleHighlight {
+  color: var(--color-primary);
+}
+
+.description {
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 90%;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.googlePlayBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #000;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.googlePlayBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -10px rgba(0,0,0,0.4);
+}
+
+.googlePlayText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.googlePlayText small {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.googlePlayText span {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.secondaryBtn {
+  color: var(--color-secondary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.secondaryBtn:hover {
+  color: var(--color-primary);
+  background: rgba(0, 82, 204, 0.05);
+}
+
+/* --- Right Side Mockups Wrapper --- */
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+  position: relative;
+  perspective: 1500px;
+  padding-bottom: 40px;
+}
+
+/* Main Front Phone - Sleeker Design */
+.phoneMockup {
+  width: 270px;
+  height: 550px;
+  background: #1E293B; /* Dark frame color directly as background */
+  border-radius: 40px;  /* Thoda kam rounded corner for modern look */
+  padding: 8px;         /* Patla border frame */
+  box-shadow:
+    0 20px 40px -10px rgba(0, 0, 0, 0.4), /* Softer outer shadow */
+    inset 0 0 0 2px #334155; /* Subtle inner rim for depth */
+  position: relative;
+  z-index: 10;
+  /* Border property hata di, padding se frame banaya hai jo zyada clean lagta hai */
+}
+
+.phoneScreen {
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;  /* Screen ke corners match karne ke liye */
+  overflow: hidden;
+  position: relative;
+  background: #000;     /* Agar image load hone mein time le to black dikhe */
+}
+.phoneScreen > img {
+  object-fit: cover !important;
+  object-position: top !important;
+  border-radius: 32px;
+}
+
+
+/* Back Mockups - Sleeker Design */
+.backMockup {
+  position: absolute;
+  width: 240px;
+  height: 500px;
+  background: #2D3748; /* Lighter frame for back phones */
+  border-radius: 35px;
+  padding: 6px;        /* Aur bhi patla frame */
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  opacity: 0.6;
+  filter: blur(0.5px);
+  transition: all 0.5s ease-out;
+}
+
+.backScreen {
+  width: 100%;
+  height: 100%;
+  border-radius: 29px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+}
+.backScreen > img {
+  object-fit: cover !important;
+  object-position: top !important;
+  border-radius: 29px;
+}
+
+
+/* Left Back Phone */
+.backMockup:nth-child(1) {
+  top: auto;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-110%) rotateY(-15deg) scale(0.9);
+}
+
+/* Right Back Phone */
+.backMockup:nth-child(2) {
+  top: 80px;
+  right: 50%;
+  transform: translateX(110%) rotateY(15deg) scale(0.9);
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .title { font-size: 3rem; }
+  .phoneMockup { width: 230px; height: 460px; }
+  .backMockup { width: 200px; height: 420px; }
+  .backMockup:nth-child(1) { transform: translateX(-90%) rotateY(-15deg) scale(0.9); }
+  .backMockup:nth-child(2) { transform: translateX(90%) rotateY(15deg) scale(0.9); }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 100px 0 60px; display: block; min-height: auto; }
+  .wrapper { flex-direction: column; gap: 40px; text-align: center; }
+  .content { align-items: center; display: flex; flex-direction: column; }
+  .title { font-size: 2.5rem; }
+  .buttonGroup { justify-content: center; flex-wrap: wrap; }
+  .imageWrapper { min-height: 450px; padding-bottom: 0; }
+  .phoneMockup { width: 220px; height: 450px; }
+  .backMockup { display: none; }
+}

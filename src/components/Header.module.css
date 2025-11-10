@@ -1,0 +1,105 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 1000; /* Sab se upar */
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* Jab page scroll ho to header ka style change hoga */
+.scrolled {
+  background: rgba(255, 255, 255, 0.8); /* Glass effect base */
+  backdrop-filter: blur(12px);           /* Blur effect */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  height: 70px; /* Thoda chota ho jayega scroll par */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Styling */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo span {
+  color: var(--color-primary);
+}
+
+/* Navigation Links (Desktop) */
+.navLinks {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.navLink {
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+}
+
+/* Download Button in Header */
+.downloadBtn {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 82, 204, 0.2);
+}
+
+.downloadBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 82, 204, 0.3);
+  background: #0046ad; /* Slightly darker on hover */
+}
+
+/* Mobile Menu Button (Hidden on Desktop) */
+.mobileMenuBtn {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; /* Mobile par links chup jayenge (abhi ke liye simple rakhte hain) */
+  }
+
+  .downloadBtn {
+    display: none; /* Mobile par header mein button bhi chupa denge taake clean rahe */
+    /* Agar dikhana ho to isay hata dein */
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+}
