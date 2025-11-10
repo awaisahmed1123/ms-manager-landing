@@ -23,14 +23,14 @@ const Header = () => {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <nav className={styles.navContainer}>
-        {/* Logo Area (Left Side) */}
+        {/* Logo Area - Updated Text */}
         <Link href="/" className={styles.logo}>
           <HiOutlineDevicePhoneMobile size={28} color="var(--color-primary)" />
-          MS<span>Manager</span>
+          Mobile Shop<span> ERP</span>
         </Link>
 
-        {/* Download Button Area (Right Side) - Links removed */}
-        <div className={styles.navLinks}> {/* Class name same rakhi taake CSS na toote */}
+        {/* Download Button Area */}
+        <div className={styles.navLinks}>
           <Link href="#" className={styles.downloadBtn}>
             Download App
           </Link>
